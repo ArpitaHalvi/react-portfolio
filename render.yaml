@@ -2,6 +2,5 @@ services:
   - type: web
     name: react-portfolio
     env: static
-    static_publish_path: build
+    static_publish_path: dist
     build_command: npm install && npm run build
-    start_command: npm start
