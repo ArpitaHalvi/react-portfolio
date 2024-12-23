@@ -1,10 +1,10 @@
-import React from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="footer" id="projects">
+    <footer className="footer">
       <div className="social-handles">
         <a
           href="https://github.com/ArpitaHalvi"
@@ -36,7 +36,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="copyright">
-        <p>&copy; 2024 All Rights Reserved.</p>
+        <p>&copy; {year}. All Rights Reserved.</p>
       </div>
     </footer>
   );

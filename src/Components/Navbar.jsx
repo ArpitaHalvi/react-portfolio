@@ -1,7 +1,12 @@
-import React from "react";
+import { useState } from "react";
+import { CgClose } from "react-icons/cg";
 import { CiMenuFries } from "react-icons/ci";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <header className="header">
       <nav className="navbar">
@@ -9,7 +14,7 @@ export default function Navbar() {
           <h2 className="icon">Arpita</h2>
         </div>
         <div className="navigation">
-          <ul className="menus">
+          <ul className={`menus ${isOpen ? "open" : ""}`}>
             <li>
               <a href="#">HOME</a>
             </li>
@@ -23,10 +28,13 @@ export default function Navbar() {
               <a href="#projects">PROJECTS</a>
             </li>
           </ul>
-          <input type="checkbox" id="check" />
-          <label className="menu-icon" htmlFor="check">
-            <CiMenuFries className="icon" />
-          </label>
+          <div className="menu-icon" htmlFor="check" onClick={toggleMenu}>
+            {isOpen ? (
+              <CgClose className="icon" />
+            ) : (
+              <CiMenuFries className="icon" />
+            )}
+          </div>
         </div>
       </nav>
     </header>
